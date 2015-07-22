@@ -13,6 +13,7 @@ from ase.dft import kpoints
 ## U_matrix from triqs.
 from U_matrix import *
 from pytriqs.operators import *
+from pytriqs.operators.util import *
 
 ## import tbBase
 from tbASE import *
@@ -143,7 +144,7 @@ class tbGutz(TB):
                     if isnambubasis:
                         H+= h_loc_kanamori_nambu(self.Atoms.spin,orbitals,UU,UUprime,J,off_diag=True)
                     else:
-                        H+=h_loc_kanamori(self.Atoms.spin,orbitals,UU,UUprime,J,off_diag=True)
+                        H+=h_int_kanamori(self.Atoms.spin,orbitals,UU,UUprime,J,off_diag=True)
 
 
         ## add all quadratic part from self.h_onsite_noint
