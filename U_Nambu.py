@@ -1,5 +1,6 @@
 #import pytriqs.utility.mpi as mpi
 from pytriqs.operators import *
+from pytriqs.operators.util import *
 from U_matrix import *
 import numpy
 
@@ -7,7 +8,7 @@ import numpy
 ### taken from pytriqs.operator.hamiltonians
 ### reforms to give the operators in Nambu basis
 ### this is a bit tricky since one has to refer to the TRIQS.
-### 
+###
 def h_loc_slater_nambu(spin_names,orb_names,U_matrix,off_diag=None,map_operator_structure=None,H_dump=None):
 
     if H_dump:
@@ -22,7 +23,7 @@ def h_loc_slater_nambu(spin_names,orb_names,U_matrix,off_diag=None,map_operator_
             U_val = U_matrix[orb_names.index(a1),orb_names.index(a2),orb_names.index(a3),orb_names.index(a4)]
             if abs(U_val.imag) > 1e-10:
                 raise RuntimeError("Matrix elements of U are not real. Are you using a cubic basis?")
-            
+
             H_term = 0.5 * U_val.real * op_in_nambubasis(c_dag(*mkind(s1,a1))) *op_in_nambubasis( c_dag(*mkind(s2,a2)))  * op_in_nambubasis(c(*mkind(s2,a4)))  * op_in_nambubasis( c(*mkind(s1,a3)))
             H += H_term
 
@@ -159,7 +160,7 @@ if __name__=="__main__":
     ##
     if True:
         print "test operators"
-        print c_dag(*("up","s")),"==>", op_in_nambubasis(c_dag(*("up","s")))    
-        print c(*("up","s")),"==>", op_in_nambubasis(c(*("up","s")))    
+        print c_dag(*("up","s")),"==>", op_in_nambubasis(c_dag(*("up","s")))
+        print c(*("up","s")),"==>", op_in_nambubasis(c(*("up","s")))
         print c_dag(*("down","s")),"==>", op_in_nambubasis(c_dag(*("down","s")))
         print c(*("down","s")),"==>", op_in_nambubasis(c(*("down","s")))
