@@ -1,5 +1,6 @@
 #import pytriqs.utility.mpi as mpi
 from pytriqs.operators import *
+from pytriqs.operators.util.op_struct import get_mkind
 from U_matrix import *
 import numpy
 

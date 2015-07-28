@@ -18,13 +18,14 @@ if __name__=="__main__":
     ### a normal square lattice. default in gallery
     aTB=TB.gallery().add_spindegeneracy()
     sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,2,1))
-    kps_size=(10,10,1)
+    kps_size=(11,11,1)
     kps=kpoints.monkhorst_pack(kps_size)
     # unit cell
     ### a Gutz TB model on a square lattice.
-    if False:
+    if True:
         gTB=tbGutz(aTB.Atoms,aTB.Hr,interaction=["Kanamori",(4.0,)])
         gTB.output_CyGutz(kps)
+        print gTB.Hr[(0,1,0)]
 
     if False:
         gTB=tbGutz(aTB.Atoms,aTB.Hr,interaction=["Kanamori",(4.0,)])            ### nambu basis from an tbGutz object
@@ -32,7 +33,7 @@ if __name__=="__main__":
         nTB.output_CyGutz(kps)
 
 
-        
+
     #supercell 2x2
     if False:
         #### unit cell
@@ -41,10 +42,10 @@ if __name__=="__main__":
         print gTB.Atoms.nspinorbitals
         gTB.output_CyGutz(kps)
 
-    if True:
+    if False:
     ### nambu basis from an tbGutz object
         gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
         nTB=gTB.trans_nambubasis()
         nTB.output_CyGutz(kps)
 
-    
+

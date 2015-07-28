@@ -117,10 +117,10 @@ class TB(object):
             a=AtomsTB("N",[(0,0,0)],cell=(1,1,1))
             a.set_orbitals_spindeg()
             aTB=TB(a)
-            aTB.set_hop([((0,1,0),0,0,1),
-                 ((1,0,0),0,0,1),
-                 ((0,-1,0),0,0,1),
-                 ((-1,0,0),0,0,1)])
+            aTB.set_hop([((0,1,0),0,0,-1),
+                 ((1,0,0),0,0,-1),
+                 ((0,-1,0),0,0,-1),
+                 ((-1,0,0),0,0,-1)])
             return aTB
         
             
@@ -410,10 +410,10 @@ if __name__=="__main__":
     # sqare lattice
     ### set up a TB object and the hoppings. This corresponds to a 2D squared lattice with nearest-neighbor hopping. This is the default one in TB.gallery()
     aTB=TB(a)
-    aTB.set_hop([((0,1,0),0,0,1),
-                 ((1,0,0),0,0,1),
-                 ((0,-1,0),0,0,1),
-                 ((-1,0,0),0,0,1)])
+    aTB.set_hop([((0,1,0),0,0,-1),
+                 ((1,0,0),0,0,-1),
+                 ((0,-1,0),0,0,-1),
+                 ((-1,0,0),0,0,-1)])
 
     # bands and dos
     ### set special k points for bands
@@ -424,6 +424,9 @@ if __name__=="__main__":
     kps=kpoints.get_bandpath([kG,kX,kM,kG],a.cell)
     ### get band structure of a square lattice
     aTB.get_bandstructure(kps,saveto="pcell_band.dat")
+    
+    quit()
+
     ### get density of states of a square lattice.
     aTB.get_dos(kps_size=(400,400,1),saveto="pcell_dos.dat")
 

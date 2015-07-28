@@ -17,7 +17,7 @@ def write_gl_mpi(myrank, nprocs, master):
 
 def write_gutz1(num_atoms, units):
   '''
-  GUTZ1.INP file. 
+  GUTZ1.INP file.
 
   num_atoms: total number of atoms (correlated and uncorrelated)
   units = 1: Wien2k convention, Rydberg/Bohr.
@@ -28,7 +28,7 @@ def write_gutz1(num_atoms, units):
 
 def write_gutz2(index_spin_orbit, index_spin_bare, max_num_bands, num_kpts):
   '''
-  GUTZ2.INP file. 
+  GUTZ2.INP file.
 
   index_spin_orbit = 1: without spin-orbit interaction.
                      2: with spin-orbit interaction.
@@ -57,12 +57,12 @@ def write_gutz3(num_symop = 0, unitary_trans = None, translations = None):
 
 def write_gutz4(max_dim_sorbit, num_corr_atoms, U_CH_to_local_basis = None):
   '''
-  GUTZ4.INP file. 
+  GUTZ4.INP file.
 
   max_dim_sorbit: maximal dimension of local correlated orbitals over all the atoms,
                   It includes the spin-factor only if spin-orbit interaction is present.
   num_corr_atoms: total number of correlated atoms.
-  U_CH_TO_local_basis: (complex) transformations from complex spherical Harmonics to the desried 
+  U_CH_TO_local_basis: (complex) transformations from complex spherical Harmonics to the desried
                        local basis, e.g., real Harmonics or relativistic Harmonics.
                        dimension: num_corr_atoms * max_dim_sorbit * max_dim_sorbit
   '''
@@ -81,7 +81,7 @@ def write_gutz4(max_dim_sorbit, num_corr_atoms, U_CH_to_local_basis = None):
 def write_gutz5(num_kpts, weight_kpts, index_smear, delta, num_electrons, index_bands):
   '''
   GUTZ5.INP file.
-  
+
   num_kpts: Total number of k-points.
   weight_kpts: k-points weight.
   index_smear = -5: linear tetrahedron method.
@@ -89,10 +89,10 @@ def write_gutz5(num_kpts, weight_kpts, index_smear, delta, num_electrons, index_
                  0: Gaussian smearing.
   delta: smearing factor (take the energy unit specified by units in GUTZ1.INP).
   num_electrons: total number of electrons.
-  index_bands: dimention num_kpts * 3. 
-  index_bands[1,:]: total number of bands for each k-point.
-  index_bands[2,:]: starting correlated band index for each k-point.
-  index_bands[3,:]: ending correlated band index for each k-point.
+  index_bands: dimention num_kpts * 3.
+  index_bands[:,0]: total number of bands for each k-point.
+  index_bands[:,1]: starting correlated band index for each k-point.
+  index_bands[:,2]: ending correlated band index for each k-point.
   '''
   with open("GUTZ5.INP", 'w') as f:
     print >> f, num_kpts
@@ -114,12 +114,12 @@ def write_gutz_bndu(myrank, ek_list, Uk_list):
   ek_list: dimension: num_local_k_points * num_bands
            list of bare band eigen-values for each local k-point (considering k-point parallelization in round-robin fashion).
   Uk_list: dimension: num_local_k_points * num_local_correlated_orbitals * num_correlated_bands.
-           list of expansion coefficients ($<\psi_nk | \phi_i\alpha>$) of local orbitals with the basis of the bare bare 
+           list of expansion coefficients ($<\psi_nk | \phi_i\alpha>$) of local orbitals with the basis of the bare bare
            eigen-vectors for each local k-point (considering k-point parallelization).
-           (It could just be the complex conjugate of the coefficient matrix of the bare eigen-vector 
+           (It could just be the complex conjugate of the coefficient matrix of the bare eigen-vector
             if the correlated orbitals were used as tight-binding basis.)
   '''
-  with open("BNDU_" + str(myrank), 'w') as f:
+  with open("BNDU_" + str(myrank) + ".INP", 'w') as f:
     for ik, ek in enumerate(ek_list):
       num_bands = len(ek)
       # dump eigen-values
@@ -127,26 +127,59 @@ def write_gutz_bndu(myrank, ek_list, Uk_list):
         print >> f, ' '.join(["%20.12f"%(elem) for elem in ek[ib : min(ib + 10, num_bands)]])
       # dump < \psi_nk | \phi_i\alpha >
       num_corr_bands = len(Uk_list[ik][0])
-      for phi in Uk_list[ik]:
+      # dump column first
+      for phi in Uk_list[ik].transpose():
         for ib in range(0, num_corr_bands, 10):
           print >> f, ' '.join(["%20.16f"%(np.real(elem)) for elem in phi[ib : min(ib + 10, num_corr_bands)]])
         for ib in range(0, num_corr_bands, 10):
           print >> f, ' '.join(["%20.16f"%(np.imag(elem)) for elem in phi[ib : min(ib + 10, num_corr_bands)]])
 
+def get_symmetrized_Umatrix(U_m):
+  '''
+  Get the fully symmetrized U matrix.
+  '''
+  num_orbs = len(U_m)
+  for j1 in range(num_orbs):
+    for j2 in range(num_orbs):
+       for j3 in range(num_orbs):
+         for j4 in range(num_orbs):
+           U1 = U_m[j1][j2][j3][j4]
+           if (np.abs(U1) < 1.e-10): continue
+           if (j1 == j2 and j1 == j3 and j1 == j4): continue
+           # 1
+           if (np.abs(U_m[j2][j1][j4][j3]) > 1.e-10):
+             assert np.abs(U_m[j2][j1][j4][j3] - U1) < 1.e-10
+           else:
+             U_m[j2][j1][j4][j3] = U1
+           # 2
+           if (np.abs(U_m[j3][j4][j1][j2]) > 1.e-10):
+             assert np.abs(U_m[j3][j4][j1][j2] - np.conj(U1)) < 1.e-10
+           else:
+             U_m[j3][j4][j1][j2] = np.conj(U1)
+           # 3
+           if (np.abs(U_m[j4][j3][j2][j1]) > 1.e-10):
+             assert np.abs(U_m[j4][j3][j2][j1] - np.conj(U1)) < 1.e-10
+           else:
+             U_m[j4][j3][j2][j1] = np.conj(U1)
+  return U_m
+
 def write_coulomb_full(U_matrix_full_list):
   '''
-  V2H.INP. Full two-body U matrix including orbital ans spin indices. 
+  V2H.INP. Full two-body U matrix including orbital ans spin indices.
            U_matrix_full[1,2,3,4] = \int{dr \int {dr' phi_1^{*}(r) phi_2^{*}(r') U(|r - r'|) phi_4(r') phi_3(r)}}
   '''
-  with open("U2H.INP", 'w') as f:
+  with open("V2H.INP", 'w') as f:
     for i, U_matrix in enumerate(U_matrix_full_list):
-      print >> f, "NI=", i
+      U_matrix = get_symmetrized_Umatrix(U_matrix)
+      print >> f, "NT=", i + 1 # one-based
       num_orbs = len(U_matrix)
       for j1 in range(num_orbs):
         for j2 in range(num_orbs):
           for j3 in range(num_orbs):
-            print >> f, ' '.join(["%20.12f"%(U_matrix[j0][j1][j2][j3]) for j0 in range(num_orbs)])
-  
+            for j4 in range(num_orbs):
+              U1 = U_matrix[j1][j2][j3][j4]
+              if np.abs(U1) < 1.e-10: continue
+              print >> f, " %3d %3d %3d %3d %20.12f %20.12f"%(j1 + 1, j2 + 1, j3 + 1, j4 + 1, U1.real, U1.imag)
 
 if __name__=="__main__":
   '''
@@ -157,18 +190,18 @@ if __name__=="__main__":
   write_gl_mpi(myrank, nprocs, master)
 
   # for super-cell cluster version, units eV/A.
-  num_atoms = 1; units = 0 
+  num_atoms = 1; units = 0
   write_gutz1(num_atoms, units)
 
   # for superconductivity?
   index_spin_orbit = 2; index_spin_bare = 2; max_num_bands = 8; num_kpts = 10
   write_gutz2(index_spin_orbit, index_spin_bare, max_num_bands, num_kpts)
-  
+
   # for models
   write_gutz3()
 
-  # Unitary transformations  
-  max_dim_sorbit = max_num_bands; num_corr_atoms = 1; 
+  # Unitary transformations
+  max_dim_sorbit = max_num_bands; num_corr_atoms = 1;
   write_gutz4(max_dim_sorbit, num_corr_atoms)
 
   #
@@ -176,7 +209,7 @@ if __name__=="__main__":
   weight_kpts.fill(1./num_kpts)
   index_smear = 0 # Gaussian smearing
   delta = 0.01 # smearing factor
-  num_electrons = 2 
+  num_electrons = 2
   index_bands = []
   for k in range(num_kpts):
     index_bands.append([max_num_bands, 1, max_num_bands])

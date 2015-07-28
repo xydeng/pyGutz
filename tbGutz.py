@@ -44,7 +44,7 @@ class tbGutz(TB):
           iscorrelated: (optional) set flags of correlated orbitals.
           isnambubasis: is in nambu basis, flag for superconducting model. See tests.
 
-        Note h_onsite is a block-diagonalized matrix, which non-zero elements only for the corresponding block for each atom. 
+        Note h_onsite is a block-diagonalized matrix, which non-zero elements only for the corresponding block for each atom.
         """
         super(tbGutz,self).__init__(Atoms,Hr)
         honsite=self.set_barehopping()
@@ -65,10 +65,10 @@ class tbGutz(TB):
           h_onsite: on site energy, which is a list This is to set t_ii_\alpha\beta(R=0) to zero
         """
         R=(0,0,0)
-        h_onsite=numpy.zeros((self.Atoms.nspinorbitals,self.Atoms.nspinorbitals),dtype=numpy.complex) 
+        h_onsite=numpy.zeros((self.Atoms.nspinorbitals,self.Atoms.nspinorbitals),dtype=numpy.complex)
         if R not in self.Hr: ## onsite part is not in the hoppings
             return h_onsite
-        
+
             # correct only in H[R=0] is diagonal
             #h_onsite[:]=numpy.diag(self.Hr[R])[:]
             #self.Hr[R]-=numpy.diag(h_onsite)
@@ -81,9 +81,9 @@ class tbGutz(TB):
                 h_onsite[k:k+norb,k:k+norb]=self.Hr[R][k:k+norb,k:k+norb]
                 k+=norb
         self.Hr[R]-=h_onsite
-                
+
         return h_onsite
-            
+
     def set_h_onsite_noint(self,h_onsite=None):
         """
         """
@@ -115,7 +115,7 @@ class tbGutz(TB):
         """ return interaction part of Hamiltonian
         Args:
           nambubasis: The interaction part is change to Nambu basis.
-          
+
         Returns:
         H: Comprehensive form of local Hamiltonian.
         H_quadratic: quadratic part of local Hamiltonian. A matrix of same size as Hr.
@@ -162,8 +162,8 @@ class tbGutz(TB):
                         H+=cop1n*cop2n*t
                     else:
                         H+=cop1*cop2*t
-                                        
-                    
+
+
         ### turn H from comprehensive form to portable form for interface.
         H_quadratic=numpy.zeros((self.Atoms.nspinorbitals,self.Atoms.nspinorbitals),dtype=numpy.complex)  #by default, H_quartic is h_onsite.
         H_quartic=[]
@@ -173,7 +173,7 @@ class tbGutz(TB):
             if len(oper)==2:   # quadratic form
                 spin1=oper[0][1][0]
                 atom1,orb1=tuple([ int(i) for i in oper[0][1][1].split("_")])
-                spin2=oper[1][1][0]                
+                spin2=oper[1][1][0]
                 atom2,orb2=tuple([ int(i) for i in oper[1][1][1].split("_")])
                 spinorbital1=self.Atoms.idx_sao_spinorbital[(spin1,atom1,orb1)]
                 spinorbital2=self.Atoms.idx_sao_spinorbital[(spin2,atom2,orb2)]
@@ -181,16 +181,16 @@ class tbGutz(TB):
             if len(oper)==4: # quartic part
                 spin1=oper[0][1][0]
                 #print oper
-                
+
                 atom1,orb1=tuple([ int(i) for i in oper[0][1][1].split("_")])
-                spin2=oper[1][1][0]                
+                spin2=oper[1][1][0]
                 atom2,orb2=tuple([ int(i) for i in oper[1][1][1].split("_")])
                 spinorbital1=self.Atoms.idx_sao_spinorbital[(spin1,atom1,orb1)]
                 spinorbital2=self.Atoms.idx_sao_spinorbital[(spin2,atom2,orb2)]
 
                 spin3=oper[2][1][0]
                 atom3,orb3=tuple([ int(i) for i in oper[2][1][1].split("_")])
-                spin4=oper[3][1][0]                
+                spin4=oper[3][1][0]
                 atom4,orb4=tuple([ int(i) for i in oper[3][1][1].split("_")])
                 spinorbital3=self.Atoms.idx_sao_spinorbital[(spin3,atom3,orb3)]
                 spinorbital4=self.Atoms.idx_sao_spinorbital[(spin4,atom4,orb4)]
@@ -199,7 +199,7 @@ class tbGutz(TB):
         self.Hloc_quadratic=H_quadratic
         self.Hloc_quartic=H_quartic
         return H,H_quadratic,H_quartic
-            
+
 
     def output_model(self,kps,Hkonly=False,suffix=None):
         """this is for the interface to Gutzwiller codel. structure, on-site
@@ -257,7 +257,7 @@ class tbGutz(TB):
                         f.write("%s "%self.iscorrelated[ior])
                     f.write("\n")
                 f.write("# if is nambu basis\n")
-                f.write("%s\n"%self.isnambubasis)                
+                f.write("%s\n"%self.isnambubasis)
 
             with open("Hloc"+suffix,"w") as f:
                 Hloc_comprehensive=self.Hloc_comprehensive
@@ -272,7 +272,7 @@ class tbGutz(TB):
                 f.write("#quartic part: (C^dag C^dag C C, scale)\n")
                 for ihterm in Hloc_quartic:
                     f.write("%s %s %s %s  %s\n"%(ihterm[0],ihterm[1],ihterm[2],ihterm[3],ihterm[4]))
-                    
+
     def trans_nambubasis(self):
         """ create a new TB with the barehopping to nambu basis. Hloc is set correspondingly.
 
@@ -282,7 +282,7 @@ class tbGutz(TB):
         """
         atoms=self.Atoms.copy()
         assert self.Atoms.spin, "Orbital has no spin degeneracy! Add spin degenaracy fisrt! ERROR!"
-        assert not self.Atoms.spinorbit, "Can not transform to Nambu within spin-orbit basis! ERROR!"        
+        assert not self.Atoms.spinorbit, "Can not transform to Nambu within spin-orbit basis! ERROR!"
         atoms.set_orbitals_spindeg(orbitals=self.Atoms.orbitals,spindeg=self.Atoms.spindeg)
         norb=atoms.nspinorbitals
         Hr={}
@@ -294,7 +294,7 @@ class tbGutz(TB):
             assert minusR in self.Hr, "Error!, inverse R is not in the hopping matrix"  # create Hr matrix
             Hr[iR][norb/2:,norb/2:]=-self.Hr[minusR].transpose()[norb/2:,norb/2:]
         # create a new tbGutz orbitals with parameters from the original one.
-        tb=tbGutz(atoms,Hr,h_onsite_noint=self.h_onsite_noint,interaction=self.interaction,iscorrelated=self.iscorrelated,isnambubasis=True)    
+        tb=tbGutz(atoms,Hr,h_onsite_noint=self.h_onsite_noint,interaction=self.interaction,iscorrelated=self.iscorrelated,isnambubasis=True)
         return tb
 
     def output_CyGutz(self,kps,num_electrons=None,mpiinfo=None):
@@ -309,7 +309,7 @@ class tbGutz(TB):
           1. GUTZ1.INP       :
           2. GUTZ2.INP       :
           3. GUTZ3.INP       :
-          4. GUTZ3.INP       : 
+          4. GUTZ3.INP       :
           5. GUTZ3.INP       :
         """
         ## GMPI_?.INP
@@ -325,13 +325,16 @@ class tbGutz(TB):
         ##
         num_atoms=len(self.Atoms)
         ## Gutz1.INP
-        units=1
+        units=0
         gl_interface.write_gutz1(num_atoms,units)
 
         # Gutz2.INP
         num_kpts=len(kps)
         index_spin_orbit= 2 if self.Atoms.spinorbit else 1
         index_spin_bare = 2 if (self.Atoms.spindeg and not self.Atoms.spinorbit) else 1
+        # tricky thing, if spin-up and spin-down  re not supposed to be treated sepaarted, we set index_spin_orbit=2
+        if index_spin_bare == 2: index_spin_orbit= 2
+
         max_num_bands=self.Atoms.nspinorbitals
         gl_interface.write_gutz2(index_spin_orbit,index_spin_bare,max_num_bands,num_kpts)
 
@@ -344,8 +347,8 @@ class tbGutz(TB):
         num_corr_atoms=1
         max_dim_sorbit=self.Atoms.nspinorbitals
         ## not max_dim_sorbit consider spin index only when spinorbit is not considered.
-        if (not self.Atoms.spinorbit) and self.Atoms.spindeg:
-            max_dim_sorbit/=2
+        #if (not self.Atoms.spinorbit) and self.Atoms.spindeg:
+        #    max_dim_sorbit/=2
         U_CH_to_local_basis=None
         gl_interface.write_gutz4(max_dim_sorbit,num_corr_atoms,U_CH_to_local_basis)
 
@@ -358,10 +361,10 @@ class tbGutz(TB):
         delta=1e-2
         if num_electrons is None: # by default, half filled.
             num_electrons=self.Atoms.nspinorbitals*1.0/len(self.Atoms.spin)
-        index_bands=numpy.zeros((3,num_kpts),dtype=numpy.int)
-        index_bands[0,:]=self.Atoms.nspinorbitals
-        index_bands[2,:]=self.Atoms.nspinorbitals
-        index_bands[1,:]=1   # fortran array starts from 1.
+        index_bands=numpy.zeros((num_kpts,3),dtype=numpy.int)
+        index_bands[:,0]=self.Atoms.nspinorbitals
+        index_bands[:,1]=1
+        index_bands[:,2]=self.Atoms.nspinorbitals
         gl_interface.write_gutz5(num_kpts,weight_kpts,index_smear,delta,num_electrons,index_bands)
 
         ### BNDU_
@@ -372,7 +375,7 @@ class tbGutz(TB):
             nkt=(len(kps)+nprocs-1) // nprocs   # get a ceiling division
             k_list=[i for i in xrange(nkt*myrank,min(nkt*myrank+nkt,len(kps)))]
             ek_list=numpy.zeros((len(k_list),Norb),dtype=numpy.float)
-            Uk_list=numpy.zeros((len(k_list),Norb,Norb),dtype=numpy.complex)            
+            Uk_list=numpy.zeros((len(k_list),Norb,Norb),dtype=numpy.complex)
             for ik in k_list:
                 hk,ikpscart=self.Hk([kps[ik]])
                 ## add h_on_site to hk
@@ -396,8 +399,8 @@ class tbGutz(TB):
         for ihterm in Hloc_quartic:
             U_matrix_full_list[(ihterm[0],ihterm[1],ihterm[3],ihterm[2])]=ihterm[4]
         gl_interface.write_coulomb_full([U_matrix_full_list,])
-        
-    
+
+
 if __name__=="__main__":
     #Example . SquareLattice.
     ### a normal square lattice. default in gallery
@@ -412,28 +415,28 @@ if __name__=="__main__":
     gTB.output_model(kps,suffix="_pcell")
     gTB.output_CyGutz(kps)
     ### dos
-    gTB.get_dos((400,400,1),saveto="gutz_pcell_dos.dat")    
+    #gTB.get_dos((400,400,1),saveto="gutz_pcell_dos.dat")
 
     ### nambu basis from an tbGutz object
-    nTB=gTB.trans_nambubasis()
-    nTB.output_model(kps,suffix="_pcell_nambu")
-    nTB.get_dos((400,400,1),saveto="gutz_pcell_dos_n.dat")
+    #nTB=gTB.trans_nambubasis()
+    #nTB.output_model(kps,suffix="_pcell_nambu")
+    #nTB.get_dos((400,400,1),saveto="gutz_pcell_dos_n.dat")
 
     #supercell 2x2
 
     ### sTB=TB.gallery().supercell(extent=(2,2,1)).add_spindegeneracy()
     # same as the line above.
-    sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,2,1))
+    #sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,2,1))
     #### unit cell
     ### a Gutz TB model on a square lattice.
-    gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
+    #gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
     #print gTB.get_Hloc()[0]
-    kps_size=(10,10,1)
-    kps=kpoints.monkhorst_pack(kps_size)
-    gTB.output_model(kps,suffix="_scell2x2")
-    gTB.get_dos((400,400,1),saveto="gutz_dos_scell2x2.dat")
+    #kps_size=(10,10,1)
+    #kps=kpoints.monkhorst_pack(kps_size)
+    #gTB.output_model(kps,suffix="_scell2x2")
+    #gTB.get_dos((400,400,1),saveto="gutz_dos_scell2x2.dat")
 
     ### nambu basis from an tbGutz object
-    nTB=gTB.trans_nambubasis()
-    nTB.output_model(kps,suffix="_scell2x2_nambu")    
-    nTB.get_dos((400,400,1),saveto="gutz_dos_scell2x2_n.dat")
+    #nTB=gTB.trans_nambubasis()
+    #nTB.output_model(kps,suffix="_scell2x2_nambu")
+    #nTB.get_dos((400,400,1),saveto="gutz_dos_scell2x2_n.dat")
