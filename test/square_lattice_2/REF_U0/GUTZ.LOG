@@ -402,6 +402,7 @@
  FS%DIM         :       256
  HL%OCC(1) L.B. :  0
  HL%OCC(2) U.B. :  8
+ WARNING: BND%ISO<ISO_IN! SET BND%ISO=ISO_IN!
  ISO_IN= 2 ISPIN_IN= 2 ISO= 2 ISPIN= 1 ISPO= 2
  BND%NMAX=   8
 ************         U_N2N  ************
@@ -678,8 +679,8 @@
          1         2        34       362      1546      3356      4540      4868      4900      4901
        ID_PHIK_J=
          1         2        34       362      1546      3356      4540      4868      4900      4901
-             GUTZ_SET_PRJ takes  0 hours  0 minutes and    0.05 seconds (CPU).
-                          takes  0 hours  0 minutes and    0.20 seconds (WALL).
+             GUTZ_SET_PRJ takes  0 hours  0 minutes and    0.04 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.17 seconds (WALL).
  SEC_N %DIM=   9
  SEC_N %ID      =         1         2        10        38        94       164       220       248       256       257
  SEC_N %VAL     =
@@ -1054,8 +1055,8 @@
    0.0000   0.0000   0.0000   0.0000  -0.0309   0.0000   0.0000   0.0000
    0.0000   0.0000   0.0000   0.0000   0.0000  -0.0013   0.0000   0.0000
    SUB_TOT=  2.400000  0.000000
-                  CALC_LC takes  0 hours  0 minutes and   12.64 seconds (CPU).
-                          takes  0 hours  0 minutes and   12.64 seconds (WALL).
+                  CALC_LC takes  0 hours  0 minutes and   12.60 seconds (CPU).
+                          takes  0 hours  0 minutes and   12.61 seconds (WALL).
 ************        R0-OUT  ************
  NI=  1 NI_GLOBAL=  1
  REAL PART
@@ -1158,8 +1159,8 @@
    0.0000   0.0000   0.0000   0.0000   0.0000  -0.0000  -0.0000   0.0000
              UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
                           takes  0 hours  0 minutes and    0.00 seconds (WALL).
-                GUTZ_FCN1 takes  0 hours  0 minutes and   12.64 seconds (CPU).
-                          takes  0 hours  0 minutes and   12.64 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and   12.61 seconds (CPU).
+                          takes  0 hours  0 minutes and   12.61 seconds (WALL).
 ************ DIF_X ************
    -0.00000003    0.00000001   -0.00000002    0.00000000    0.00000003
    -0.00000001   -0.00000004   -0.00000000   -0.00000002   -0.00000000
@@ -1174,8 +1175,8 @@
  ITER1=      1 MAXERR=    0.00000005
  NFJAC=   0
  SOLVE1 FINISHED WITH       1 ITERATIONS.
-               GUTZ_SOLVE takes  0 hours  0 minutes and   12.64 seconds (CPU).
-                          takes  0 hours  0 minutes and   12.64 seconds (WALL).
+               GUTZ_SOLVE takes  0 hours  0 minutes and   12.61 seconds (CPU).
+                          takes  0 hours  0 minutes and   12.61 seconds (WALL).
  NI=  1 SUM_PHY-SUM_VAR=      0.00000000
         SUM_PHY-SUM_KS =     -0.00000007 WOULD BE RENORMALIZED!
 ************    NC_PHY_REN  ************
@@ -1231,5 +1232,5 @@
  NI=  1 ENTANGLEMENT ENTROPY=      3.9649
 MODE= 0 CORRELATED SUBSPACE, SUM_FERWT=      2.4000000 SUM_KSWT=      2.4000000
       MAX OFF DIAGONAL KS.WT=    0.009091
-                    TOTAL takes  0 hours  0 minutes and   12.74 seconds (CPU).
-                          takes  0 hours  0 minutes and   12.92 seconds (WALL).
+                    TOTAL takes  0 hours  0 minutes and   12.71 seconds (CPU).
+                          takes  0 hours  0 minutes and   12.88 seconds (WALL).

@@ -1,0 +1,6 @@
+ LGPRJ = 4:  Assuming  $[\phi,N] = [\phi,S_z] = 0$  (SOC neglected, magnetism and crystal field allowed)
+ LGPRJ = 4
+ LEIGV = 2   (Lanczos)
+ NEV_F = 20   (default number of eigenvectors calculated by Lanczos, change in GL.INP if necessary)
+ NCV_F = NEV_F x 36 = 720   (default Number of Lanczos basis vectors, change in GL.INP if necessary)
+( the value of n0 will be updated in GL_NELF1.INP & GL_NELF1.OUT during the calculation )

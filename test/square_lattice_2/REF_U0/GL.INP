@@ -2,23 +2,23 @@
 # one key word per line.
 LSCF = 1     # (regenerate variational setup and run)
 LGPRJ = 14     # (variational setup)
-BNDISO = 2     # (flag to run code without soc using jj basis)
+BNDISO = 1     # (flag to run code without soc using jj basis)
+LETA = 0     # (gauge-invariant formulation, sb)
 LEIGV = 2     # (Lanczos)
-NEV_F = 20     # (number of eigenvectors calculated by lanczos)
-NCV_F = 720     # (number of Lanczos basis vectors, default = nev_f x 36)
-LDC = 0     # (No double counting.)
-LHUB = -1     # (V2H.INP read in (including spin index.))
-LCLUSTER = 1     # (Multi-atom (cluster) impurity.)
-LFORMATBNDU = 1     # (Plain text format.)
+NEV_F = 20
+LDC = 0     # (no dc)
+LHUB = -1    # (slater)
 LSOLVER = 1     # (quasi-newton method)
 NMAX_ITER = 100000000     # (maximum number of quasi-newton iterations)
+LCLUSTER = 1
+LFORMATBNDU = 1
 
 ATOM TYPE INFO
 1       # number of different types of correlated atoms
 NT = 1         # (comment line) label correlated type of atom
-0 0         # u,j of g electrons of x
-4            # number of g orbitals (no spin)
-0 8  0         # valence range chosen & n0
+8.0 0.0         # u,j of s electrons of h
+4            # number of s orbitals (no spin)
+0  8           # valence range chosen & n0
 
 ATOM INFO
 1        # nions (total number of correlated atoms, equivalent or not)
