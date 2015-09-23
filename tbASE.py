@@ -28,7 +28,7 @@ class AtomsTB(Atoms):
       orbitals:  orbital names/index, list with each item is a list of orbital names on each atom, for example, [["s"],["s","p"]]
       spin:      name of spins, by default, spin=["up"], only one spin component is considered. Can be also ["up","down"].
       nspinorbitals: number of orbitals with possible spin degeneracy
-      
+
     """
     def set_orbitals_spindeg(self,orbitals=None,spindeg=False,spinorbit=False):
         """ set the orbitals in a ASE ATOMS object.
@@ -44,19 +44,19 @@ class AtomsTB(Atoms):
           nspinorbitals:
           idx_sao_spinorbital: index(ispin,iatom,iorbital) is reduced to a number (ispinorbital):
           idx_spinorbital_sao: spinorbital is transform to index(ispin,iatom,iorbital).
-          
+
         Example:
         1. set a atom with two bands "s" and spin degenaracy
         >>> a=AtomsTB("N",[(0,0,0)],cell=(1,1,1))
         >>> a.set_orbital_spindeg(orbitals=[("s","p")],spindeg=True)
         """
-        
+
 
         if orbitals is None: ## one s  orbital per atoms by default
             self.orbitals=[("s",) for i in xrange(len(self.positions))]
         else:
             self.orbitals=orbitals[:]   ## make a copy
-        assert type(self.orbitals) == type([]), "orbitals should be a list of tuples"                    
+        assert type(self.orbitals) == type([]), "orbitals should be a list of tuples"
 
         self.spindeg=spindeg
         self.spinorbit=spinorbit
@@ -66,7 +66,7 @@ class AtomsTB(Atoms):
             self.spin=["so"]
         else:
             self.spin=["up"]
-            
+
         self.nspinorbitals=0
         for i in self.orbitals:
             self.nspinorbitals+=len(i)
@@ -84,14 +84,14 @@ class AtomsTB(Atoms):
                     idx+=1
         self.idx_spinorbital_sao=idx_spinorbital_sao
         self.idx_sao_spinorbital=idx_sao_spinorbital
-            
+
 class TB(object):
     """ A tight-binding mode is defined with an ASE object Atoms and Hopping
     """
     def __init__(self,AtomsTB,Hr=None):
         """ Init TB object
 
-        Args: 
+        Args:
         AtomsTB: ASE object define the unit cell, the atoms, with orbitals set.
         Hr: Hr is a dict of (R, hop), with R is tranlational vector and hop is hopping matrix between unit cells. len(Hr[R])=self.AtomsTB.nspinorbitals
         """
@@ -122,8 +122,14 @@ class TB(object):
                  ((0,-1,0),0,0,1),
                  ((-1,0,0),0,0,1)])
             return aTB
-        
-            
+        if name =="Chain_nn":
+            a=AtomsTB("N",[(0,0,0)],cell=(1,1,1))
+            a.set_orbitals_spindeg()
+            aTB=TB(a)
+            aTB.set_hop([((1,0,0),0,0,1),
+                 ((-1,0,0),0,0,1)])
+            return aTB
+
     def set_hop(self,hoppings=None):
         """
         Set hopping mannually. In addition to a Hr matrix. Hopping is a tupe with the form (R, iorb,jorb,t_hop).
@@ -135,7 +141,7 @@ class TB(object):
         Example:
         >>>a=AtomsTB("N",[(0,0,0)],cell=(1,1,1))
         >>>a.set_orbitals_spindeg()
-        >>>a.set_hop([((0,1),0,0,1])   #note other directions has to be set too          
+        >>>a.set_hop([((0,1),0,0,1])   #note other directions has to be set too
         """
         if type(hoppings) == type((1,)): # if only set only one term, change it to list for consistency.
             hoplist=[hoppings,]
@@ -148,9 +154,9 @@ class TB(object):
                     self.Hr[R]=numpy.zeros((self.Atoms.nspinorbitals,self.Atoms.nspinorbitals),dtype=numpy.complex)
                 self.Hr[R][iorb,jorb]=t_hop
             else:
-                R,hr=ihop                
+                R,hr=ihop
                 self.Hr[R]=hr
-                
+
     def supercell(self,extent=None,pbc=None):
         """generate a supercell with respect to original unit cell
 
@@ -170,7 +176,7 @@ class TB(object):
         if type(extent) is int:
             m=(extent,extent,extent)
         trans=[numpy.array(i) for i  in numpy.ndindex(m)]  # way to trans unit cell to supercell.
-        dup=len(trans)          # num of duplicate of unit cell 
+        dup=len(trans)          # num of duplicate of unit cell
         atoms.set_orbitals_spindeg(self.Atoms.orbitals*dup,self.Atoms.spindeg,self.Atoms.spinorbit)
 
         ex=numpy.diag(m)
@@ -212,14 +218,14 @@ class TB(object):
                     Hr[shift][i*Norb/2:(i+1)*Norb/2,td*Norb/2:(td+1)*Norb/2]=self.Hr[iR][:Norb/2,:Norb/2]
                     Hr[shift][i*Norb/2+dup*Norb/2:(i+1)*Norb/2+dup*Norb/2,td*Norb/2:(td+1)*Norb/2]=self.Hr[iR][Norb/2:,:Norb/2]
                     Hr[shift][i*Norb/2:(i+1)*Norb/2,td*Norb/2+dup*Norb/2:(td+1)*Norb/2+dup*Norb/2]=self.Hr[iR][:Norb/2,Norb/2:]
-                    Hr[shift][i*Norb/2+dup*Norb/2:(i+1)*Norb/2+dup*Norb/2,td*Norb/2+dup*Norb/2:(td+1)*Norb/2+dup*Norb/2]=self.Hr[iR][Norb/2:,Norb/2:]                                        
+                    Hr[shift][i*Norb/2+dup*Norb/2:(i+1)*Norb/2+dup*Norb/2,td*Norb/2+dup*Norb/2:(td+1)*Norb/2+dup*Norb/2]=self.Hr[iR][Norb/2:,Norb/2:]
 
         sTB=TB(AtomsTB=atoms,Hr=Hr)
         return sTB
 
     def Hk(self,kps=numpy.zeros((1,3))):
         """ Construct Hamiltonian for given k points.Fourier transform of Hr.
-        Args:        
+        Args:
           kps: array of size (n,3), n is number of k points. k point is required to be in unit of reciprocal periodic lattice vector.
 
         Return:
@@ -255,7 +261,7 @@ class TB(object):
 
           if keepwf is True: return (eigenvalues, wavefunctions) else
           return (eigenvalues,)
-          
+
         """
         Norb=self.Atoms.nspinorbitals
         ek=numpy.zeros((len(kps),Norb),dtype=numpy.float)
@@ -283,7 +289,7 @@ class TB(object):
 
     def get_bandstructure(self,kps,saveto=None,with_weights=False):
         """ get the band structure for given kpath.
-        
+
         Args:
           kps: kpoints, kpath object given by ase.dft.kpoints.
           saveto: save data to specific file
@@ -293,7 +299,7 @@ class TB(object):
         if with_weights:
             eks,Uks,kpscart=self.eigens(kps[0],keepwf=with_weights)
         else:
-            eks,=self.eigens(kps[0])            
+            eks,=self.eigens(kps[0])
         if saveto is None:
             filename="band.dat"
         else:
@@ -335,7 +341,7 @@ class TB(object):
             kps_size=(8,8,8)
         kps=kpoints.monkhorst_pack(kps_size)
         eks,=self.eigens(kps)
-        
+
         if dos_mesh is None:
             dos_mesh=numpy.linspace(eks.min(),eks.max(),500)
         if saveto is None:
@@ -363,7 +369,7 @@ class TB(object):
         """
         atoms=self.Atoms.copy()
         assert not self.Atoms.spindeg,"Spin degeneray is already considered.! ERROR!"
-        assert not self.Atoms.spinorbit,"Cann't add spin degeneracy to spin-orbit orbitals! ERROR!"        
+        assert not self.Atoms.spinorbit,"Cann't add spin degeneracy to spin-orbit orbitals! ERROR!"
         atoms.set_orbitals_spindeg(self.Atoms.orbitals,spindeg=True)
         norb=atoms.nspinorbitals
         Hr={}
@@ -371,7 +377,7 @@ class TB(object):
             Hr[iR]=numpy.zeros((norb,norb),dtype=type(self.Hr[iR][0,0]))
             Hr[iR][0:norb/2,0:norb/2]=self.Hr[iR][:,:]
             Hr[iR][norb/2:,norb/2:]=self.Hr[iR][:,:]
-            
+
         return TB(atoms,Hr)
 
 
@@ -384,7 +390,7 @@ class TB(object):
         """
         atoms=self.Atoms.copy()
         assert self.Atoms.spindeg, "Orbital has no spin degeneracy! Add spin degenaracy fisrt! ERROR!"
-        assert not self.Atoms.spinorbit,"Cann't transform to Nambubasis with spin-orbit orbitals! ERROR!"                
+        assert not self.Atoms.spinorbit,"Cann't transform to Nambubasis with spin-orbit orbitals! ERROR!"
         atoms.set_orbitals_spindeg(orbitals=self.Atoms.orbitals,spindeg=self.Atoms.spindeg)
         norb=atoms.nspinorbitals
         Hr={}
@@ -394,10 +400,10 @@ class TB(object):
             ### for down spin, Hr[R]=-(Hr[-R]).transpose
             minusR=tuple([-i for i in iR])
             assert minusR in self.Hr, "Error!, inverse R is not in the hopping matrix"  # create Hr matrix
-            Hr[iR][norb/2:,norb/2:]=-self.Hr[minusR].transpose()[norb/2:,norb/2:] 
-            
-        return TB(atoms,Hr)    
-        
+            Hr[iR][norb/2:,norb/2:]=-self.Hr[minusR].transpose()[norb/2:,norb/2:]
+
+        return TB(atoms,Hr)
+
 
 if __name__=="__main__":
     # The following is a simple test for the above codes.
@@ -420,7 +426,7 @@ if __name__=="__main__":
     kG=[0,0,0]
     kX=[0.5,0,0]
     kM=[0.5,0.5,0]
-    ### set up a ase.dft.kpoints kpath object 
+    ### set up a ase.dft.kpoints kpath object
     kps=kpoints.get_bandpath([kG,kX,kM,kG],a.cell)
     ### get band structure of a square lattice
     aTB.get_bandstructure(kps,saveto="pcell_band.dat")
@@ -433,14 +439,14 @@ if __name__=="__main__":
     sTB=aTB.supercell(extent=(2,1,1))
     ## for plotting the band structure and compare to the one of the unite cell, redefine the k path.
     kX=[1.0,0,0]
-    kM=[1.0,0.5,0]    
+    kM=[1.0,0.5,0]
     kps=kpoints.get_bandpath([kG,kX, kM,kG],sTB.Atoms.cell)
-    sTB.get_bandstructure(kps,saveto="scell21_band.dat")    
+    sTB.get_bandstructure(kps,saveto="scell21_band.dat")
 
     ## construct a 2x2 supercell of the 2D square lattice
     sTB22=aTB.supercell(extent=(2,2,1))
     kX=[1.0,0,0]
-    kM=[1.0,1.0,0]    
+    kM=[1.0,1.0,0]
     kps=kpoints.get_bandpath([kG,kX, kM,kG],sTB22.Atoms.cell)
     sTB22.get_bandstructure(kps,saveto="scell22_band.dat")
 
@@ -449,14 +455,14 @@ if __name__=="__main__":
     nambuTB=aTB.add_spindegeneracy().trans_Nambubasis()
     kX=[0.5,0,0]
     kM=[0.5,0.5,0]
-    kps=kpoints.get_bandpath([kG,kX,kM,kG],a.cell)    
+    kps=kpoints.get_bandpath([kG,kX,kM,kG],a.cell)
     nambuTB.get_bandstructure(kps,saveto="pcell_band_nambu.dat")
     nambuTB.get_dos(kps_size=(400,400,1),saveto="pcell_dos_nambu.dat")
-    
+
     ## 2x2 supercell
     nambuTB22=sTB22.add_spindegeneracy().trans_Nambubasis()
     kX=[1.0,0,0]
-    kM=[1.0,1.0,0]    
+    kM=[1.0,1.0,0]
     kps=kpoints.get_bandpath([kG,kX, kM,kG],nambuTB22.Atoms.cell)
-    nambuTB.get_bandstructure(kps,saveto="pcell_band_nambu.dat")    
+    nambuTB.get_bandstructure(kps,saveto="pcell_band_nambu.dat")
     nambuTB22.get_dos(kps_size=(400,400,1),saveto="scell22_dos_nambu.dat")
