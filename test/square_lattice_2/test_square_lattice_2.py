@@ -17,7 +17,7 @@ if __name__=="__main__":
     #Example . SquareLattice.
     ### a normal square lattice. default in gallery
     sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,2,1))
-    kps_size=(5,11,1)
+    kps_size=(11,11,1)
     kps=kpoints.monkhorst_pack(kps_size)
     # unit cell
     ### a Gutz TB model on a square lattice.
