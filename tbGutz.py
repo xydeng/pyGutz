@@ -325,13 +325,16 @@ class tbGutz(TB):
         ##
         num_atoms=len(self.Atoms)
         ## Gutz1.INP
-        units=1
+        units=0
         gl_interface.write_gutz1(num_atoms,units)
 
         # Gutz2.INP
         num_kpts=len(kps)
         index_spin_orbit= 2 if self.Atoms.spinorbit else 1
         index_spin_bare = 2 if (self.Atoms.spindeg and not self.Atoms.spinorbit) else 1
+        # tricky thing, if spin-up and spin-down  re not supposed to be treated sepaarted, we set index_spin_orbit=2
+        if index_spin_bare == 2: index_spin_orbit= 2
+
         max_num_bands=self.Atoms.nspinorbitals
         gl_interface.write_gutz2(index_spin_orbit,index_spin_bare,max_num_bands,num_kpts)
 
@@ -344,8 +347,8 @@ class tbGutz(TB):
         num_corr_atoms=1
         max_dim_sorbit=self.Atoms.nspinorbitals
         ## not max_dim_sorbit consider spin index only when spinorbit is not considered.
-        if (not self.Atoms.spinorbit) and self.Atoms.spindeg:
-            max_dim_sorbit/=2
+        #if (not self.Atoms.spinorbit) and self.Atoms.spindeg:
+        #    max_dim_sorbit/=2
         U_CH_to_local_basis=None
         gl_interface.write_gutz4(max_dim_sorbit,num_corr_atoms,U_CH_to_local_basis)
 
@@ -358,10 +361,10 @@ class tbGutz(TB):
         delta=1e-2
         if num_electrons is None: # by default, half filled.
             num_electrons=self.Atoms.nspinorbitals*1.0/len(self.Atoms.spin)
-        index_bands=numpy.zeros((3,num_kpts),dtype=numpy.int)
-        index_bands[0,:]=self.Atoms.nspinorbitals
-        index_bands[2,:]=self.Atoms.nspinorbitals
-        index_bands[1,:]=1   # fortran array starts from 1.
+        index_bands=numpy.zeros((num_kpts,3),dtype=numpy.int)
+        index_bands[:,0]=self.Atoms.nspinorbitals
+        index_bands[:,1]=1
+        index_bands[:,2]=self.Atoms.nspinorbitals
         gl_interface.write_gutz5(num_kpts,weight_kpts,index_smear,delta,num_electrons,index_bands)
 
         ### BNDU_
@@ -415,23 +418,23 @@ if __name__=="__main__":
     gTB.get_dos((400,400,1),saveto="gutz_pcell_dos.dat")
 
     ### nambu basis from an tbGutz object
-    nTB=gTB.trans_nambubasis()
-    nTB.output_model(kps,suffix="_pcell_nambu")
-    nTB.get_dos((400,400,1),saveto="gutz_pcell_dos_n.dat")
+    #nTB=gTB.trans_nambubasis()
+    #nTB.output_model(kps,suffix="_pcell_nambu")
+    #nTB.get_dos((400,400,1),saveto="gutz_pcell_dos_n.dat")
 
     #supercell 2x2
 
     ### sTB=TB.gallery().supercell(extent=(2,2,1)).add_spindegeneracy()
     # same as the line above.
-    sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,2,1))
+    #sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,2,1))
     #### unit cell
     ### a Gutz TB model on a square lattice.
-    gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
+    #gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
     #print gTB.get_Hloc()[0]
-    kps_size=(10,10,1)
-    kps=kpoints.monkhorst_pack(kps_size)
-    gTB.output_model(kps,suffix="_scell2x2")
-    gTB.get_dos((400,400,1),saveto="gutz_dos_scell2x2.dat")
+    #kps_size=(10,10,1)
+    #kps=kpoints.monkhorst_pack(kps_size)
+    #gTB.output_model(kps,suffix="_scell2x2")
+    #gTB.get_dos((400,400,1),saveto="gutz_dos_scell2x2.dat")
 
     ### nambu basis from an tbGutz object
     nTB=gTB.trans_nambubasis()
