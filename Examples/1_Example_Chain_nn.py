@@ -16,18 +16,19 @@ from tbGutz import *
 if __name__=="__main__":
     #Example. A Chain with nearest neighbour hopping
     aTB=TB.gallery("Chain_nn").add_spindegeneracy()
-    sTB=TB.gallery().add_spindegeneracy().supercell(extent=(2,1,1))
+    sTB=TB.gallery("Chain_nn").add_spindegeneracy().supercell(extent=(2,1,1))
     kps_size=(4000,1,1)
     kps=kpoints.monkhorst_pack(kps_size)
     # unit cell
     ### a TB model on a Chain
-    if True: #DOS
+    if False: #DOS
         gTB=tbGutz(aTB.Atoms,aTB.Hr,interaction=["Kanamori",(4.0,)])
+        #check density of states
         gTB.get_dos(kps_size,saveto="chain_dos_cell.dat")
         gTB.output_CyGutz(kps)
 
     #supercell 2x1
-    if False:
+    if True:
         #### super cell
         gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
         gTB.get_dos(kps_size,saveto="chain_dos_scell.dat")

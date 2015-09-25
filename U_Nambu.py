@@ -1,7 +1,6 @@
 #import pytriqs.utility.mpi as mpi
 from pytriqs.operators import *
 from pytriqs.operators.util import *
-#from U_matrix import *
 import numpy
 
 
