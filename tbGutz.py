@@ -309,8 +309,10 @@ class tbGutz(TB):
           1. GUTZ1.INP       :
           2. GUTZ2.INP       :
           3. GUTZ3.INP       :
-          4. GUTZ3.INP       :
-          5. GUTZ3.INP       :
+          4. GUTZ4.INP       :
+          5. GUTZ5.INP       :
+          6. BNDU_0.INP          : dispersion
+          7. U2H.INP           : dispersion
         """
         ## GMPI_?.INP
         if mpiinfo is None:
@@ -391,7 +393,7 @@ class tbGutz(TB):
 
             gl_interface.write_gutz_bndu(myrank,ek_list,Uk_list)
 
-        ##Couloumb U
+        ##Couloumb U : U2H.INP
         Norb=self.Atoms.nspinorbitals
         U_matrix_full_list=numpy.zeros((Norb,Norb,Norb,Norb))
         Hloc_quartic=self.Hloc_quartic
