@@ -1,0 +1,1657 @@
+ CyGutz VMPI.4.5 BUILT ON Sep 21 2015 AT 23:37:41
+ NT=  1 FS%SEC_N%DIM=    3 WITH ID:
+           1       2       4       5
+ MEAN U/J:  0.0000  0.0000 eV.
+ CHK_WH_HS:
+ NI=  1 I_HS=   1 COEF:
+     1.000  0.000
+************     MATRIX HS  ************
+ NI=  1 NI_GLOBAL=  1
+ INDEX_HS =    1
+ REAL PART
+   0.7071   0.0000
+   0.0000   0.7071
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ Lattice model.
+ CALC SET: GA        FULL           -N-PJ INP-V2H  NO DC        eV     
+ NT= 1
+ LOCAL INTERACTION PART   :
+ U              :   0.0000 eV.
+ J              :   0.0000 eV.
+ FOCK SPACE PART:
+ NA             :  1
+ FS%OCC(1) L.B. :  0
+ FS%OCC(2) U.B. :  2
+ FS%DIM         :         4
+ HL%OCC(1) L.B. :  0
+ HL%OCC(2) U.B. :  2
+ ISO_IN= 2 ISPIN_IN= 2 ISO= 2 ISPIN= 1 ISPO= 2
+ BND%NMAX=   2
+************         U_N2N  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         U_C2N  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         U_B2N  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MIN/MAX(BND%NE(1,:))=       2       2
+ MIN/MAX(BND%NE(2,:))=       1       1
+ MIN/MAX(BND%NE(3,:))=       2       2
+ VALENCE ELECTRONS: TOTAL=     0.6
+                    CORRELATED BLOCK=     0.6
+ BND%NMAXIN=    2
+************           SR0  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           HR0  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   ORBITAL SPLITTING:
+   0.00000   0.00000
+ GUTZ FERMI LEVEL=     -1.38828682
+************           NK0  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************      EL-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   ORBITAL SPLITTING:
+   0.00000   0.00000
+ NI=  1 LOCAL ORBITAL LEVEL CENTER(ELC)=   0.000
+************        EL-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   ORBITAL SPLITTING:
+   0.00000   0.00000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ There are  1 blockes of bands, with band energy windows(wrt E_Fermi):
+  -4.000   3.838 | 
+ Band window indices:
+         1      2 | 
+ Band width
+       7.838   |  
+ Band gap
+
+ CORRELATED BLOCK: EMIN/EMIX=   -4.0000    3.8380
+ CORRELATED BAND WIDTH=   7.838
+ NI=  1 DIM_PHIK=         6 HL%DIM=         4
+       ID_PHIK_N=
+         1         2         6         7
+       ID_PHIK_J=
+         1         2         6         7
+             GUTZ_SET_PRJ takes  0 hours  0 minutes and    0.01 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ SEC_N %DIM=   3
+ SEC_N %ID      =         1         2         4         5
+ SEC_N %VAL     =
+
+         0.0000    1.0000    2.0000
+ NMAX_BK=     2
+************     R-INI-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************   LA1-INI-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   ORBITAL SPLITTING:
+   0.00000   0.00000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************        NKS-WH  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.000000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ INITIAL CHEMICAL POTENTIAL=   -1.3883
+************ WH%X ************
+    1.41279935    0.00000000    0.00000000
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38549248
+ GA FERMI LEVEL=     -1.38549248
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5734   0.0000
+   0.0000  -1.5734
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3720   0.0000
+   0.0000   1.3720
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  =  0.00000000  0.00000000
+ PJ%C VAL CHANGE=  2.06092807 -1.37202914
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06092807          1.37202914
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600336  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600336  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4583   0.0000
+   0.0000   0.4583
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+    0.00164043    0.00000000    0.00023764
+ ITER1=      1 MAXERR=    0.00164043
+************ WH%X ************
+    1.41281348    0.00000000    0.00000000
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38552026
+ GA FERMI LEVEL=     -1.38552026
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5734   0.0000
+   0.0000  -1.5734
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3721   0.0000
+   0.0000   1.3721
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  =  1.00000000  0.00000000
+ PJ%C VAL CHANGE=  0.00001232 -0.00002732
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06094039          1.37205646
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600333  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600333  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4583   0.0000
+   0.0000   0.4583
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+    0.00162405    0.00000000    0.00023528
+ ITER1=      2 MAXERR=    0.00162405
+************ WH%X ************
+    1.41279935    0.00001000    0.00000000
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38549248
+ GA FERMI LEVEL=     -1.38549248
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5734   0.0000
+   0.0000  -1.5734
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3720   0.0000
+   0.0000   1.3720
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  =  1.00000000 -0.00000425
+ PJ%C VAL CHANGE= -0.00001232  0.00002732
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06092807          1.37202914
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600336  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600336  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4583   0.0000
+   0.0000   0.4583
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+    0.00164043    0.00000001    0.00023764
+ ITER1=      3 MAXERR=    0.00164043
+************ WH%X ************
+    1.41279935    0.00000000    0.00000000
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9990   0.0000
+   0.0000   0.9990
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38549248
+ GA FERMI LEVEL=     -1.38549248
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7210   0.0000
+   0.0000  -0.7210
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5734   0.0000
+   0.0000  -1.5734
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3720   0.0000
+   0.0000   1.3720
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  =  1.00000000  0.00000425
+ PJ%C VAL CHANGE= -0.00000000  0.00000000
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06092807          1.37202914
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600336  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600336  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4583   0.0000
+   0.0000   0.4583
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0003   0.0000
+   0.0000   1.0003
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+    0.00164043    0.00000000    0.00023764
+ ITER1=      4 MAXERR=    0.00164043
+************ WH%X ************
+    1.41421456    0.00000001 -141.27993487
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+ -99.9000   0.0000
+   0.0000 -99.9000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.06 seconds (WALL).
+ GUTZ FERMI LEVEL=   -101.28828888
+ GA FERMI LEVEL=   -101.28828888
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5750   0.0000
+   0.0000  -1.5750
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+ 101.2748   0.0000
+   0.0000 101.2748
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  = -0.71398423  0.00000000
+ PJ%C VAL CHANGE= -2.01195150-99.90275020
+ DIAG_FHL ITER=    0 PJ%EVL=         -0.04897657        101.27477934
+ NI=  1 PHI-step gap=  0.10E+03
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0002   0.0000
+   0.0000   0.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.000483  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0002   0.0000
+   0.0000   0.0002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.000483  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0155   0.0000
+   0.0000   0.0155
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0339   0.0000
+   0.0000   0.0339
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0339   0.0000
+   0.0000   0.0339
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0012   0.0000
+   0.0000   0.0012
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0012   0.0000
+   0.0000   0.0012
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.06 seconds (WALL).
+************ DIF_X ************
+   -1.36624382   -0.00000000   -0.42392228
+ ITER1=      5 MAXERR=    1.36624382
+************ WH%X ************
+    1.41421018    0.00000000   -0.00051317
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.0004   0.0000
+   0.0000  -0.0004
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38864304
+ GA FERMI LEVEL=     -1.38864304
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5750   0.0000
+   0.0000  -1.5750
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3751   0.0000
+   0.0000   1.3751
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  = -0.71419323 -0.00000000
+ PJ%C VAL CHANGE=  2.01296874 99.89964570
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06194531          1.37513363
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.599912  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.599912  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4582   0.0000
+   0.0000   0.4582
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9999   0.0000
+   0.0000   0.9999
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.9999   0.0000
+   0.0000   0.9999
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+   -0.00005580   -0.00000000   -0.00006214
+ ITER1=      6 MAXERR=    0.00006214
+************ WH%X ************
+    1.41421793   -0.00000000    0.00248934
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0018   0.0000
+   0.0000   0.0018
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38653526
+ GA FERMI LEVEL=     -1.38653526
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5750   0.0000
+   0.0000  -1.5750
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3730   0.0000
+   0.0000   1.3730
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  =  0.99999992  0.00000000
+ PJ%C VAL CHANGE=  0.00128100  0.00210803
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06322630          1.37302560
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600429  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3002   0.0000
+   0.0000   0.3002
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600429  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4584   0.0000
+   0.0000   0.4584
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0002   0.0000
+   0.0000   1.0002
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0004   0.0000
+   0.0000   1.0004
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0004   0.0000
+   0.0000   1.0004
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+    0.00028455   -0.00000000    0.00030356
+ ITER1=      7 MAXERR=    0.00030356
+************ WH%X ************
+    1.41421353   -0.00000000    0.00000046
+************         R1-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************          R-IN  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************           LA1  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.0000   0.0000
+   0.0000   0.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             CALC_BAND_AL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+ GUTZ FERMI LEVEL=     -1.38828644
+ GA FERMI LEVEL=     -1.38828644
+************     NKS-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NKS-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NELE_LOC TOTAL:
+       0.60000
+************      NKS-REGU  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************    ISIMIX-VAR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   2.1822   0.0000
+   0.0000   2.1822
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  4.364358  0.000000
+************      D0-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************        D0-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -0.7218   0.0000
+   0.0000  -0.7218
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+************         D-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+  -1.5750   0.0000
+   0.0000  -1.5750
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************       LA2-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.3748   0.0000
+   0.0000   1.3748
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+ PJ%C_OLD.PJ%C  =  0.99999995 -0.00000000
+ PJ%C VAL CHANGE= -0.00106018 -0.00175133
+ DIAG_FHL ITER=    0 PJ%EVL=         -2.06216613          1.37477693
+ NI=  1 PHI-step gap=  0.34E+01
+************     NCV-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NCV-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+                  CALC_LC takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************        R0-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.4583   0.0000
+   0.0000   0.4583
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************         R-OUT  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************     R-OUT-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+  -0.0000   0.0000
+   0.0000  -0.0000
+************     RR\dagger  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+************     R\daggerR  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   1.0000   0.0000
+   0.0000   1.0000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+             UPDATE_R_ALL takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+                GUTZ_FCN1 takes  0 hours  0 minutes and    0.00 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.00 seconds (WALL).
+************ DIF_X ************
+    0.00000009   -0.00000000    0.00000006
+ ITER1=      8 MAXERR=    0.00000009
+ NFJAC=   1
+ SOLVE1 FINISHED WITH       8 ITERATIONS.
+               GUTZ_SOLVE takes  0 hours  0 minutes and    0.01 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.06 seconds (WALL).
+************     NCP-UNSYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+************       NCP-SYM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ MAX ERROR DUE TO SYMMETRIZATION =     0.000000
+ NI=  1 SUM_PHY-SUM_VAR=      0.00000000
+        SUM_PHY-SUM_KS =      0.00000009 WOULD BE RENORMALIZED!
+************    NCP_RENORM  ************
+ NI=  1 NI_GLOBAL=  1
+ REAL PART
+   0.3000   0.0000
+   0.0000   0.3000
+ IMAG PART
+   0.0000   0.0000
+   0.0000   0.0000
+   SUB_TOT=  0.600000  0.000000
+ GYZ%HL%EGAMM:
+     0.00000
+ ENG%GAMM:     0.00000
+ ENG%POT2:     0.00000
+ EDCLA1(NI) ARRAY:
+    -0.000
+ EDCUJ(NI) ARRAY:
+     0.000
+ EDC(NI) ARRAY:
+    -0.000
+ ENG%DBLC:    -0.00000
+ ENG%DC1 :    -0.00000
+ ENG%DC2 :     0.00000
+ ENG%HYBRD:    -1.44352
+ ENG%BAND:    -1.44366
+ ENG%TS2 :    -0.00015
+ ENG%DL(DEEP LEVEL):     0.00000
+ ENG%TB(ENG%BAND+ENG%DBLC+ENG%GAMM)=    -1.44366
+ ENG%TB-DC2=    -1.44366
+ NI=  1 OCC_CONFIG_WEIGHT:
+        OCC= 0 WEIGHT=   0.49000
+        OCC= 1 WEIGHT=   0.42000
+        OCC= 2 WEIGHT=   0.09000
+ NI=  1 ENTANGLEMENT ENTROPY=      1.2217
+MODE= 0 CORRELATED SUBSPACE, SUM_FERWT=      0.6000000 SUM_KSWT=      0.6000000
+      MAX OFF DIAGONAL KS.WT=    0.000000
+                    TOTAL takes  0 hours  0 minutes and    0.04 seconds (CPU).
+                          takes  0 hours  0 minutes and    0.12 seconds (WALL).
