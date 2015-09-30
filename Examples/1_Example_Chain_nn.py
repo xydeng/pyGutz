@@ -10,6 +10,7 @@ import os,sys
 
 ### include  in loadPATH the WIEN_GUTZ script. It would be better to borrow some script from there
 sys.path.append("/home/xiaoyu/Public/Soft//WIEN_GUTZ/Wien_Gutz_4.5/bin/")
+sys.path.append("../../../src/")
 ## import ase module
 from ase.dft import kpoints
 ## import tbBase
@@ -24,8 +25,8 @@ if __name__=="__main__":
     kps=kpoints.monkhorst_pack(kps_size)
     # unit cell
     ### a TB model on a Chain
-    if True: #DOS
-        gTB=tbGutz(aTB.Atoms,aTB.Hr,interaction=["Kanamori",(1.0,)])
+    if False: #DOS
+        gTB=tbGutz(aTB.Atoms,aTB.Hr,interaction=["Kanamori",(4.0,)])
         #check density of states
         gTB.get_dos(kps_size,saveto="chain_dos_cell.dat")
         gTB.output_CyGutz(kps)
@@ -52,9 +53,9 @@ if __name__=="__main__":
         log.close()
 
     #supercell 2x1
-    if False:
+    if True:
         #### super cell
-        gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(1.0,)])
+        gTB=tbGutz(sTB.Atoms,sTB.Hr,interaction=["Kanamori",(4.0,)])
         gTB.get_dos(kps_size,saveto="chain_dos_scell.dat")
         gTB.output_CyGutz(kps)
 
