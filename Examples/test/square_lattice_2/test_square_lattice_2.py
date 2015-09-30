@@ -6,7 +6,7 @@ from scipy.linalg import block_diag
 ## import ase module
 from ase.dft import kpoints
 import sys
-sys.path.append("../../")
+sys.path.append("../../../")
 sys.path.append("/home/ykent/WIEN_GUTZ/bin/")
 
 ## import tbBase
@@ -40,7 +40,7 @@ if __name__=="__main__":
     SOC = ['y']; CF = ['y']
     NTYPE = 1; NIONS = 1; ITYPE_list = [1]
     NI0_list = [1]; NIMAP_list = [1]; corr_atom_type = ["X"]
-    type_1atom = [0]; df_list = ["g"]; dim_list = [norbitals*2]
+    type_1atom = [0]; df_list = ["ssss"]; dim_list = [norbitals*2]
     log = open("init_ga.slog", 'w')
     set_gl_inp(spin_pol, SOC, CF, NTYPE, NIONS, ITYPE_list, NI0_list, NIMAP_list, corr_atom_type, type_1atom, df_list, dim_list, log)
     log.close()
